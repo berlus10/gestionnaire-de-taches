@@ -21,7 +21,7 @@ jobs:
           cache: 'npm'
 
       - name: Installer les dépendances
-        run: npm ci
+        run: npm install
 
       - name: Lancer les tests unitaires
         run: npm run test:unit
@@ -44,7 +44,7 @@ jobs:
           cache: 'npm'
 
       - name: Installer les dépendances
-        run: npm ci
+        run: npm install
 
       - name: Installer les navigateurs Playwright
         run: npx playwright install --with-deps chromium
