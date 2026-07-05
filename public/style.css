@@ -1,0 +1,46 @@
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 600px;
+  margin: 40px auto;
+  color: #1a1a1a;
+}
+
+form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+input, select, button {
+  padding: 8px;
+  font-size: 14px;
+}
+
+.error {
+  color: #b00020;
+}
+
+ul#task-list {
+  list-style: none;
+  padding: 0;
+}
+
+ul#task-list li {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.priority-haute {
+  border-left: 4px solid #b00020;
+}
+
+.priority-moyenne {
+  border-left: 4px solid #e0a800;
+}
+
+.priority-basse {
+  border-left: 4px solid #2e7d32;
+}

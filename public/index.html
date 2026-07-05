@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gestionnaire de tâches</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <h1>Gestionnaire de tâches</h1>
+
+    <form id="task-form">
+      <input type="text" id="title" placeholder="Titre de la tâche" required />
+      <select id="priority">
+        <option value="basse">Basse</option>
+        <option value="moyenne" selected>Moyenne</option>
+        <option value="haute">Haute</option>
+      </select>
+      <input type="date" id="dueDate" required />
+      <button type="submit">Ajouter</button>
+    </form>
+
+    <p id="error-message" class="error" hidden></p>
+
+    <section>
+      <h2>Tâches en retard : <span id="overdue-count">0</span></h2>
+      <ul id="task-list" data-testid="task-list"></ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
