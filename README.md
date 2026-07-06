@@ -45,7 +45,7 @@ npm run e2e
 ```
 
 ## Preuve d'exécution des tests
-
+<img width="1398" height="555" alt="Test" src="https://github.com/user-attachments/assets/6ea616af-4e75-4304-a325-ebeea80526fd" />
 Dernière exécution de `npm test` (25 tests, 2 fichiers) :
 
 ```
@@ -57,7 +57,8 @@ Dernière exécution de `npm test` (25 tests, 2 fichiers) :
 ```
 
 La pipeline CI/CD (`.github/workflows/ci.yml`) exécute automatiquement ces tests
-à chaque push et pull request sur `main`. Voir capture GitHub Actions dans le rapport QA.
+à chaque push et pull request sur `main`. 
+![alt text](CI_Success.png)
 
 ## Structure du projet
 
