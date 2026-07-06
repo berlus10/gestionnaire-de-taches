@@ -1,8 +1,8 @@
-# QA_REPORT.md — Gestionnaire de tâches
+# QA_REPORT.md - Gestionnaire de tâches
 
 ## 1. Présentation du projet
 
-- **Thème choisi** : Gestionnaire de tâches (Thème 1)
+- **Thème choisi** : Gestionnaire de tâches 
 - **Objectif** : permettre à un utilisateur de créer des tâches, de suivre leur statut et leur
   priorité, et de visualiser automatiquement les tâches en retard et urgentes.
 - **Stack utilisée** : Node.js + Express (backend et API), stockage en mémoire, HTML/CSS/JS
@@ -19,7 +19,7 @@
 - Détection automatique du retard d'une tâche.
 - Comptage du nombre de tâches en retard.
 - Tri de la liste des tâches par urgence (en retard + priorité haute en premier).
-- Interface web simple permettant de créer une tâche et de voir la liste se mettre à jour.
+- Interface web simple permettant de créer une tâche, de voir la liste se mettre à jour, et de changer le statut d'une tâche via les boutons "Démarrer" et "Terminer".
 
 Le périmètre a été volontairement limité (pas de suppression de tâche, pas d'édition du titre
 après création, pas d'authentification) pour garder un projet complet, testé et documenté plutôt
@@ -148,19 +148,14 @@ accessibles (`getByRole('button', { name: 'Ajouter' })`), volontairement choisis
 sélecteurs CSS fragiles (classes de style, structure DOM), afin de ne pas casser les tests si le
 style visuel change.
 
-**Limite technique rencontrée** : l'environnement d'exécution utilisé pendant le développement
-(sandbox Claude) bloque le téléchargement du binaire Chromium par Playwright (domaine non
-autorisé sur le réseau de la sandbox). Le test a donc été écrit et vérifié syntaxiquement
-(`npx playwright test --list` confirme la bonne détection des 2 tests), mais son exécution réelle
-avec navigateur doit être faite en local ou via la CI GitHub Actions, qui n'a pas cette
-restriction réseau.
+
 
 ## 9. Pipeline CI/CD
 
 - **Emplacement** : `.github/workflows/ci.yml`
 - **Déclenchement** : à chaque `push` et `pull request` sur la branche `main`.
 - **Jobs** :
-  1. `unit-and-integration-tests` : installe les dépendances (`npm ci`), lance `npm run test:unit`
+  1. `unit-and-integration-tests` : installe les dépendances (`npm install`), lance `npm run test:unit`
      puis `npm run test:integration`.
   2. `e2e-tests` (dépend du job précédent) : installe les navigateurs Playwright
      (`npx playwright install --with-deps chromium`) puis lance `npm run e2e`.
